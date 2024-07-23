@@ -4,6 +4,7 @@ from schemas import UserSchema, TaskSchema
 from database import db
 from sqlalchemy.exc import IntegrityError
 from flask_marshmallow import Marshmallow
+from flask_cors import CORS
 
 user_schema = UserSchema()
 users_schema = UserSchema(many=True)
@@ -13,6 +14,7 @@ tasks_schema = TaskSchema(many=True)
 
 def create_app():
     app = Flask(__name__)
+    CORS(app, origins='http://localhost:3000')
     # Initialize Marshmallow
     ma = Marshmallow(app)
     app.config.from_object('config.Config')
