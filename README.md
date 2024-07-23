@@ -19,5 +19,8 @@
 
 4. Configure the PostgreSQL database:
     Create a database named fullstack_test
+    change to database url in config.py file 
+    'postgresql://username:password@localhost/fullstack_test'
+       
    
 5. flask run 
